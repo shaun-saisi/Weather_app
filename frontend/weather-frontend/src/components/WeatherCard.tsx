@@ -1,26 +1,12 @@
 type WeatherCardProps = {
   city: string;
   temperature: number;
-  humidity: number;
-  pressure: number;
-  weather_description: string;
+  rain: number;
+  clouds: number;
   wind_speed: number;
-  wind_deg: number;
-  sunrise: string;
-  sunset: string;
 };
 
-export default function WeatherCard({
-  city,
-  temperature,
-  humidity,
-  pressure,
-  weather_description,
-  wind_speed,
-  wind_deg,
-  sunrise,
-  sunset,
-}: WeatherCardProps) {
+export default function WeatherCard({ city, temperature, rain, clouds, wind_speed }: WeatherCardProps) {
   return (
     <div
       style={{
@@ -33,14 +19,10 @@ export default function WeatherCard({
       <h2 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>
         {city}
       </h2>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>{temperature}°C</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Humidity: {humidity}%</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Pressure: {pressure} hPa</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Weather: {weather_description}</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Wind Speed: {wind_speed} m/s</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Wind Direction: {wind_deg}°</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Sunrise: {sunrise}</p>
-      <p style={{ color: '#374151', fontSize: '1rem' }}>Sunset: {sunset}</p>
+      <p style={{ color: '#374151', fontSize: '1rem' }}>🌡️ Temperature: {temperature}°C</p>
+      <p style={{ color: '#374151', fontSize: '1rem' }}>🌧️ Rain (last 1h): {rain} mm</p>
+      <p style={{ color: '#374151', fontSize: '1rem' }}>☁️ Cloudiness: {clouds}%</p>
+      <p style={{ color: '#374151', fontSize: '1rem' }}>💨 Wind Speed: {wind_speed} m/s</p>
     </div>
   );
 }
